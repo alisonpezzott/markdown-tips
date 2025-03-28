@@ -135,5 +135,93 @@ Saída:
 |Gravação do curso  |Congelado   |50%       |
 |Revisão da mentoria|Concluído   |100%      |
 
+# Badges  
+
+Badges são cards que podem possuir ícones, textos, links e algumas estatísticas que são resultado de alguma API.  
+Veja abaixo alguns badges de exemplo.  
+
+Input:  
+`![GitHub Repo stars](https://img.shields.io/github/stars/alisonpezzott/pbi-docs?style=flat&color=yellow&link=https%3A%2F%2Fgithub.com%2Falisonpezzott%2Fpbi-docs%2Fblob%2Fmain%2F)`  
+Output:  
+![GitHub Repo stars](https://img.shields.io/github/stars/alisonpezzott/pbi-docs?style=flat&color=yellow&link=https%3A%2F%2Fgithub.com%2Falisonpezzott%2Fpbi-docs%2Fblob%2Fmain%2F)
+
+Input:  
+`[GitHub forks](https://img.shields.io/github/forks/alisonpezzott/pbi-docs?style=flat&color=blue&link=https%3A%2F%2Fgithub.com%2Falisonpezzott%2Fpbi-docs%2Fedit%2Fmain%2F`     
+
+Output:  
+![GitHub forks](https://img.shields.io/github/forks/alisonpezzott/pbi-docs?style=flat&color=blue&link=https%3A%2F%2Fgithub.com%2Falisonpezzott%2Fpbi-docs%2Fedit%2Fmain%2F)  
+
+Input:
+`[![GitHub followers](https://img.shields.io/github/followers/alisonpezzott?style=flat&logo=github&logoColor=ffffff&colorA=2E3440&colorB=FFFFFF)](https://github.com/alisonpezzott)`  
+
+Output:  
+[![GitHub followers](https://img.shields.io/github/followers/alisonpezzott?style=flat&logo=github&logoColor=ffffff&colorA=2E3440&colorB=FFFFFF)](https://github.com/alisonpezzott)  
 
 
+Input:  
+`[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white)](https://discord.gg/sJTDvWz9sM)`  
+Output:  
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white)](https://discord.gg/sJTDvWz9sM)
+
+Visit [https://img.shields.io/](https://img.shields.io/) for more examples.  
+
+
+# Fluxogramas   
+
+Podemos criar diagramas Mermaid para demonstrar o fluxo de algum processo como o exemplo abaixo:  
+
+Input:  
+```
+```mermaid
+flowchart TD
+    A[Start] -->|Request access token| B[get_token]
+    B -->|Fetch tenant metadata| C[get_tenant_metadata]
+    C -->|Save JSON files| D[Save metadata to results/tenant_metadata]
+    
+    D -->|Extract dataset information| E[get_info_datasets]
+    E -->|Run DAX queries| F[Generate CSV files for each dataset]
+    F -->|Save to results/datasets_info| G[Save dataset info]
+    
+    D -->|Export dataflows JSON| H[get_dataflows]
+    H -->|Save JSON files| I[Save to results/dataflows_json]
+    
+    D -->|Identify PRO datasets| J[get_pro_datasets]
+    J -->|Export PBIX files| K[Save to results/exported_pbix]
+    
+    K -->|Extract dataset info from PBIX| L[get_info_pro_datasets]
+    L -->|Run DAX Query locally| M[Generate CSV files for each dataset]
+    M -->|Save to results/datasets_info| N[Save dataset info]
+    
+    G & N -->|Generate documentation| O[create_documentation]
+    O -->|Save DOCX files| P[Save to results/documentation]
+    
+    P -->|Process completed| Q[End]
+\```
+```
+
+Output:  
+```mermaid
+flowchart TD
+    A[Start] -->|Request access token| B[get_token]
+    B -->|Fetch tenant metadata| C[get_tenant_metadata]
+    C -->|Save JSON files| D[Save metadata to results/tenant_metadata]
+    
+    D -->|Extract dataset information| E[get_info_datasets]
+    E -->|Run DAX queries| F[Generate CSV files for each dataset]
+    F -->|Save to results/datasets_info| G[Save dataset info]
+    
+    D -->|Export dataflows JSON| H[get_dataflows]
+    H -->|Save JSON files| I[Save to results/dataflows_json]
+    
+    D -->|Identify PRO datasets| J[get_pro_datasets]
+    J -->|Export PBIX files| K[Save to results/exported_pbix]
+    
+    K -->|Extract dataset info from PBIX| L[get_info_pro_datasets]
+    L -->|Run DAX Query locally| M[Generate CSV files for each dataset]
+    M -->|Save to results/datasets_info| N[Save dataset info]
+    
+    G & N -->|Generate documentation| O[create_documentation]
+    O -->|Save DOCX files| P[Save to results/documentation]
+    
+    P -->|Process completed| Q[End]
+```

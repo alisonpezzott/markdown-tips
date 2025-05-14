@@ -163,6 +163,12 @@ Input:
 Output:  
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white)](https://discord.gg/sJTDvWz9sM)
 
+Input:  
+`![License](https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge)`  
+Output:  
+![License](https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge)  
+
+
 Visit [https://img.shields.io/](https://img.shields.io/) for more examples.  
 
 
